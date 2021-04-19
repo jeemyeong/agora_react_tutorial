@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import AgoraRTC from "agora-rtc-sdk-ng";
 import './App.css';
+import Editor from "./Editor";
 // import ReactDOM from 'react-dom';
 
 var client = AgoraRTC.createClient({ mode: "rtc", codec: "h264" });
@@ -129,6 +130,10 @@ function App() {
 
   return (
     <>
+      {
+        joined ? <Editor id={channelRef.current.value}/> : null
+      }
+
       <div className="container">
         <input
           type="text"
