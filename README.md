@@ -15,3 +15,4 @@ REACT_APP_appId=somestringoverhere
 
 
 
+https://firepad-with-agora.web.app/
