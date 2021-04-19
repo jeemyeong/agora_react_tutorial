@@ -130,10 +130,6 @@ function App() {
 
   return (
     <>
-      {
-        joined ? <Editor id={channelRef.current.value}/> : null
-      }
-
       <div className="container">
         <input
           type="text"
@@ -157,21 +153,29 @@ function App() {
         />
         */ }
       </div>
-      {joined ? (
-        <>
-          <div id="local-player" className="stream local-stream"></div>
 
-          <div className="col">
-            <div id="remote-playerlist" style={{width:400, height:400,}}>
-            {
-              uids.map(uid => <>
-                <div className="player" id={`player-${uid}`}></div>
-              </>)
-            }
-            </div>
-          </div>
-        </>
-      ) : null}
+      <div style={{
+        display: "flex"
+      }}>
+        {
+          joined ? <Editor id={channelRef.current.value}/> : null
+        }
+        {joined ? (
+            <>
+              <div id="local-player" className="stream local-stream"></div>
+
+              <div className="col">
+                <div id="remote-playerlist" style={{width:400, height:400,}}>
+                  {
+                    uids.map(uid => <>
+                      <div className="player" id={`player-${uid}`}></div>
+                    </>)
+                  }
+                </div>
+              </div>
+            </>
+        ) : null}
+      </div>
     </>
   );
 }
