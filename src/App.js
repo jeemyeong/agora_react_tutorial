@@ -147,6 +147,7 @@ function App() {
           onClick={join}
           disabled={joined ? true : false}
         />
+        { /* disabled
         <input
           type="button"
           ref={leaveRef}
@@ -154,6 +155,7 @@ function App() {
           onClick={leave}
           disabled={joined ? false : true}
         />
+        */ }
       </div>
       {joined ? (
         <>
